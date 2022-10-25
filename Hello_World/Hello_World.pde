@@ -1,5 +1,6 @@
 //Global Variables
 int appWidth, appHeight;
+float centerX, centerY, xStart, yStart, widthRect, heightRect;
 //
 void setup() {
   //Declaring Display Geometry: landscape, square, portrait
@@ -21,15 +22,25 @@ void setup() {
     if ( appWidth > displayWidth ) { //Fitting CANVAS into Monitor Display 
     appWidth=0;
     appHeight=0;
-    println("Not working -_-");
+    println("Not working -_-'");
     } else {
       //Empty ELSE
     }
+    color w = color(#FFFFFF);
+    fill(w);
+    noStroke();
   }
+  //Population
+  centerX = width * 1/2;
+  centerY = height * 1/2;
+  xStart = centerX - ( width * 1/4 );
+  yStart = centerY - ( height * 1/4 );
+  widthRect = width * 1/2;
+  heightRect = height * 1/2;
   } //End setup
   //
   void draw() {
-  color c = color(#111111);
+  color c = color(#FF0000);
   fill(c);
   noStroke();
   ellipse(350, 200, 200, 200);
