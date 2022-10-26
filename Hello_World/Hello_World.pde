@@ -1,6 +1,8 @@
 //Global Variables
 int appWidth, appHeight;
 float centerX, centerY, xStart, yStart, widthRect, heightRect;
+// color blackNightMode=#000000, yellow=#F8FC64, purple=#FA00F6, white=#FFFFFF; //Hexidecimal
+// float thin, normal, thick;
 //
 void setup() {
   //Declaring Display Geometry: landscape, square, portrait
@@ -26,9 +28,6 @@ void setup() {
     } else {
       //Empty ELSE
     }
-    color w = color(#FFFFFF);
-    fill(w);
-    noStroke();
   }
   //Population
   centerX = width * 1/2;
@@ -37,10 +36,27 @@ void setup() {
   yStart = centerY - ( height * 1/4 );
   widthRect = width * 1/2;
   heightRect = height * 1/2;
+  thin = appWidth / appWidth; //1
+  normal = appWidth * 1/70;
+  thick = appWidth * 1/35;
   } //End setup
   //
   void draw() {
+  // New Background Function "covers" old gray scae background()
+  // Night Mode means background cannot have blue // change random
+  color w = color(#FFFFFF);
   color c = color(#FF0000);
+  background(w); //Gray Scale (0-255) & Blue Issue for night mode
+  //
+  // Casting Reminder
+  // background( color( random(0 , 255), random(0 , 255), random(0 , 255) ) ); // Color without blue
+  // background( blackNightcode );
+  // strokeWeight( thick );
+  // stroke( red );
+  // fill(white); //default reset
+  // stroke( blackNightMode ); //default reset
+  // strokeWeight(1); //default reset
+  // rect(xStart. yStart, widthRect, heightRect);
   fill(c);
   noStroke();
   ellipse(350, 200, 200, 200);
