@@ -2,9 +2,9 @@
 int appWidth, appHeight;
 float centerX, centerY, xStart, yStart, widthRect, heightRect;
 // color blackNightMode=#000000, yellow=#F8FC64, purple=#FA00F6, white=#FFFFFF; //Hexidecimal
-// color yellowNightMode=#F8FC00, purpleNightMode;
+// color yellowNightMode=#F8FC00, purpleNightMode=#FA0096;
 // float thin, normal, thick;
-Boolean nightMode=false, randomBackground=false;
+//  Boolean grayScale=false, backgroundColor=false, nightMode=false, randomBackground=false;
 //
 void setup() {
   //Declaring Display Geometry: landscape, square, portrait
@@ -51,12 +51,21 @@ void setup() {
   color c3 = color(#4B0082);
   color c4 = color(#A41720);
   noLoop();
-  background(c1); //Gray Scale (0-255) & Blue Issue for night mode
+  // background(c1); //Gray Scale (0-255) & Blue Issue for night mode
   //
   // Casting Reminder
   // background( color( random(0 , 255), random(0 , 255), random(0 , 255) ) ); // Color without blue
   // background( blackNightcode );
   // strokeWeight( thick );
+  //  if ( nightMode == true)
+  //{
+  //  stroke( yellow ); 
+  //  fill( purple ); 
+  //} else
+  //{
+  //  stroke( yellow ); 
+  //  fill( purple ); 
+  //}
   //
   // stroke( red );
   // fill(white); //default reset
@@ -71,6 +80,10 @@ void setup() {
 void setGradient() {}
 //
 void keyPressed() {
+  grayScale = false;
+  backgroundColor = false;
+  if ( key == 'G' || key == 'g' ) grayScale = true;
+  if ( key == 'G' || key == 'g' ) backgroundColor = true;
 } //End keyPressed
 //
 void mousePressed() {
