@@ -1,4 +1,3 @@
-
 float groundY = 250;
 float cactusYpos = 250, cactusXpos;
 float gametimer;
@@ -7,6 +6,7 @@ float playerY = 100;
 float playerWidth = 30;
 float playerHeight = 50;
 float playerSpeedY = 0;
+float a, b, c;
 
 //only allow jumping if the player is not already jumping
 boolean jumping = false;
@@ -50,7 +50,10 @@ void draw() {
     //gravity accelerates the movement speed
     playerSpeedY ++;
   }
-  rect(cactusXpos,cactusYpos,20,-45);
+  // if(a); etc etc...
+  a = rect(cactusXpos, cactusYpos, 20, -45);
+  b = rect(cactusXpos, cactusYpos, 40, -20);
+  c = rect(cactusXpos, cactusYpos, 40, -45);
 
   //draw the player rectangle
   rect(playerX, playerY, playerWidth, playerHeight);
