@@ -6,25 +6,25 @@ float playerY = 100;
 float playerWidth = 30;
 float playerHeight = 50;
 float playerSpeedY = 0;
-float a, b, c;
+int number;
 
 //only allow jumping if the player is not already jumping
 boolean jumping = false;
 
 void setup() {
   size(600, 300);
-  
+  number = random(0,2);
   cactusXpos = width;
 }
 
 void draw() {
   background(64);
-  if (cactusXpos > playerX && cactusXpos < playerX + 35 && jumping == false) {exit();}
+  if (cactusXpos > playerX && cactusXpos < playerX + 35 && jumping == false) {exit(); println("Game Over!");}
   
-  gametimer = gametimer + 0.001;
   cactusXpos = (cactusXpos - gametimer) - 5;
+  gametimer = gametimer + 0.001;
   
-  if (cactusXpos < 0) {cactusXpos = cactusXpos + width;}
+  if (cactusXpos < 0) {random(0,2);};
 
   //draw the ground
   stroke(255);
@@ -50,11 +50,14 @@ void draw() {
     //gravity accelerates the movement speed
     playerSpeedY ++;
   }
-  // if(a); etc etc...
-  a = rect(cactusXpos, cactusYpos, 20, -45);
-  b = rect(cactusXpos, cactusYpos, 40, -20);
-  c = rect(cactusXpos, cactusYpos, 40, -45);
-
+  if(number = 0,1,2) {};
+  if(number == 0) {};
+  if(number == 1) {};
+  if(number == 2) {};
+  if(1 = rect(cactusXpos, cactusYpos, 20, -45)) {cactusXpos = (cactusXpos - gametimer) - 5;};
+  if(b = rect(cactusXpos, cactusYpos, 40, -20)) {cactusXpos = (cactusXpos - gametimer) - 5;};
+  if(c = rect(cactusXpos, cactusYpos, 40, -45)) {cactusXpos = (cactusXpos - gametimer) - 5;};
+  
   //draw the player rectangle
   rect(playerX, playerY, playerWidth, playerHeight);
 }
