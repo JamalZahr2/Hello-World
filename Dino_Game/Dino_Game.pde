@@ -23,8 +23,8 @@ void draw() {
   gametimer = gametimer + 0.001;
   cactusXpos = (cactusXpos - gametimer) - 5;
   
-  if (cactusXpos < 0) {random(3);} else {cactusXpos = (cactusXpos - gametimer) - 5;}
-  if (playerX == cactusXpos) {}
+  if (cactusXpos < width) {random(3);} else {cactusXpos = (cactusXpos - gametimer) - 5;}
+  if (playerX == cactusXpos) {rect(20, 20, 20, 20);}
   //draw the ground
   stroke(255);
   line(0, groundY, width, groundY);
