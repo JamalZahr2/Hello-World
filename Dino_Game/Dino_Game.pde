@@ -6,7 +6,7 @@ float playerY = 100;
 float playerWidth = 30;
 float playerHeight = 50;
 float playerSpeedY = 0;
-float x;
+float x = random(3);
 
 //only allow jumping if the player is not already jumping
 boolean jumping = false;
@@ -15,7 +15,7 @@ void setup() {
   size(600, 300);
   cactusXpos = width;
   
-  x = 1;
+  //x = random(3);
 }
 
 void draw() {
@@ -26,7 +26,10 @@ void draw() {
   gametimer = gametimer + 0.001;
   cactusXpos = (cactusXpos - gametimer)-5;
   
-  if (cactusXpos < 0) { x = random(3); println("test");} else {cactusXpos = (cactusXpos - gametimer);}
+  if (cactusXpos < 0) { x = random(0,2); println("test");
+  if(x == 0) {cactusXpos = cactusXpos + width;}
+  if(x == 1) {cactusXpos = cactusXpos + width;}
+  if(x == 2) {cactusXpos = cactusXpos + width;}cactusXpos = (cactusXpos - gametimer);}
   if (playerX == cactusXpos) {random(3);}
   //draw the ground
   stroke(255);
